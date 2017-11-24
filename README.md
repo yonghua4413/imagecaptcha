@@ -1,5 +1,5 @@
-# imagecaptch
-imagecaptch
+# imageCaptcha
+imageCaptcha
 
 使用方法
 

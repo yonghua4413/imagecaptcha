@@ -1,0 +1,20 @@
+{
+  "name": "yy/imagecode",
+  "description": "验证码",
+  "type": "project",
+  "keywords": [
+    "imagecaptcha",
+    "加减乘除法图片验证码"
+  ],
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "autoload": {
+    "files": [],
+    "psr-4": {
+      "yy\\imagecaptcha\\": "src"
+    }
+  }
+}

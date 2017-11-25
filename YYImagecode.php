@@ -43,44 +43,24 @@ class YYImagecode
 
 		$frist = mt_rand(1, 100);
 		$end   = mt_rand(1, 100);
+		$fontsize = mt_rand(4,6);
+		$fontcolor = imagecolorallocate($this->image, rand(1, 120), rand(1, 120), rand(1, 120));
+		$x = (int)($this->width/8)+rand(3, 8);
+		$y = rand(10, 20);
 		if($frist < $end){
 		    $method = '+';
 		    if(($frist <= 10) && ($end <= 10)){
 		        $method = '*';
 		    }
-			$fontsize = mt_rand(4,6);
-			$fontcolor = imagecolorallocate($this->image, rand(1, 120), rand(1, 120), rand(1, 120));
-			$x = (int)($this->width/8)+rand(3, 8);
-			$y = rand(10, 20);
-			if($method == "*"){
-			    $fonttext = $frist. " x " .$end. ' = ?';
-			    imagestring($this->image, $fontsize, $x, $y, $fonttext, $fontcolor);
-			    $res = $frist * $end;
-			}else{
-			    $fonttext = $frist. " $method " .$end. ' = ?';
-			    imagestring($this->image, $fontsize, $x, $y, $fonttext, $fontcolor);
-			    $res = $frist + $end;
-			}
 		}else{
-			//减法
 		    $method = '-';
 		    if(($frist % $end) == 0){
 		        $method = '/';
 		    }
-			$fontsize = mt_rand(4,6);
-			$fontcolor = imagecolorallocate($this->image, rand(1, 120), rand(1, 120), rand(1, 120));
-			$x = (int) ($this->width/8) + rand(3, 8);
-			$y = rand(10, 20);
-			if($method == "/"){
-			    $fonttext = $frist. ' / ' .$end. ' = ?';
-			    imagestring($this->image, $fontsize, $x, $y, $fonttext, $fontcolor);
-			    $res = $frist / $end;
-			}else{
-			    $fonttext = $frist. " $method " .$end. ' = ?';
-			    imagestring($this->image, $fontsize, $x, $y, $fonttext, $fontcolor);
-			    $res = $frist - $end;
-			}
 		}
+		$fonttext = $frist. " $method " .$end. ' = ?';
+		eval('$res = '. $frist . $method . $end.';');
+	    imagestring($this->image, $fontsize, $x, $y, $fonttext, $fontcolor);
 		$_SESSION[$this->session_name] = $res;
 	}
 	
@@ -104,7 +84,7 @@ class YYImagecode
 	 * 输出和销毁
 	 */
 	private function out(){
-	  ob_clean();
+	    ob_clean();
 		header('content-type:image/png');//输出内容格式，输出图像前一定要输出header
 		imagepng($this->image);//将$image输出，输出图像
 		imagedestroy($this->image);//销毁图像

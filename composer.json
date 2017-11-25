@@ -15,7 +15,7 @@
   "autoload": {
     "files": [],
     "psr-4": {
-      "imagecaptcha\\": "src"
+      "imagecaptcha\\": "src/"
     }
   }
 }

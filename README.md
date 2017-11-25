@@ -7,4 +7,4 @@ use \imagecaptcha;
 
 YYImagecode::make();
 
-![Geetest Image Demo](http://aixue.img-cn-hangzhou.aliyuncs.com/20161102103454_97263.png)
+![Geetest Image Demo](http://wsqnxh.com/code.png)

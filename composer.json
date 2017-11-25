@@ -13,7 +13,7 @@
   },
   "autoload": {
     "psr-4": {
-      "imagecaptcha\\": "src/"
+      "Imagecaptcha\\": "src/"
     }
   }
 }

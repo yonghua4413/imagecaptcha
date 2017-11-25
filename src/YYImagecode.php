@@ -1,5 +1,5 @@
 <?php
-namespace imagecaptcha;
+namespace Imagecaptcha;
 /**
  * 加减乘除法图片验证码
  * @author 254274509@qq.com

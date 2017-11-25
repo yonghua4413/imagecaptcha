@@ -1,11 +1,17 @@
 # imageCaptcha
 imageCaptcha
 
-使用方法
+##Installation
+
+```
+$ composer require yonghua4413/imagecaptcha
+```
 
 ```php
+//加载
 use \imagecaptcha;
 
+//生成
 YYImagecode::make();
 
 //后端验证

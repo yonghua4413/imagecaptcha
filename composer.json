@@ -9,7 +9,8 @@
   "license": "MIT",
   "minimum-stability": "stable",
   "require": {
-    "php": ">=5.4.0"
+    "php": ">=5.4.0",
+    "ext-gd": "*"
   },
   "autoload": {
     "files": [],

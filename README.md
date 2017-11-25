@@ -1,7 +1,8 @@
-# imageCaptcha
-imageCaptcha
+# imagecaptcha
 
-##Installation
+加减乘除图片验证码
+
+## Installation
 
 ```
 $ composer require yonghua4413/imagecaptcha
@@ -16,7 +17,7 @@ YYImagecode::make();
 
 //后端验证
 
-$code = $_SRSSION['code'];
+$code = $_SESSION['code'];
 
 ```
 

@@ -7,13 +7,11 @@
     "加减乘除法图片验证码"
   ],
   "license": "MIT",
-  "minimum-stability": "stable",
   "require": {
     "php": ">=5.4.0",
     "ext-gd": "*"
   },
   "autoload": {
-    "files": [],
     "psr-4": {
       "imagecaptcha\\": "src/"
     }

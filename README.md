@@ -21,3 +21,7 @@ $code = $_SESSION['code'];
 ```
 
 ![Geetest Image Demo](http://wsqnxh.com/code.png)
+
+## 常见问题
+
+如遇图像无法输出，请在调用前加 ob_start();

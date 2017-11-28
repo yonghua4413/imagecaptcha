@@ -26,6 +26,7 @@ class YYImagecode
 
 	public static function make($width=100,$height=40, $session_name='code')
 	{
+		ob_start();
 		if(!self::$_instance instanceof self) 
 		{ 
 		    self::$_instance = new self($width, $height, $session_name);

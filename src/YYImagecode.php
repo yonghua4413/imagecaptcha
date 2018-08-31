@@ -11,6 +11,7 @@ class YYImagecode
 	private $height;
 	private $session_name;
 	private $image;
+	private $font;
 
 	private function __construct($width, $height, $session_name)
 	{
@@ -21,6 +22,7 @@ class YYImagecode
         $this->width = $width;
         $this->height = $height;
         $this->session_name = $session_name;
+        $this->font = dirname(dirname(__FILE__))."/font/RegencieLightObl.ttf";
         $this->image = imagecreatetruecolor($this->width, $this->height);
 	}
 
@@ -51,18 +53,22 @@ class YYImagecode
 		$y = rand(10, 20);
 		if($frist < $end){
 		    $method = '+';
+		    $method_txt = "＋";
 		    if(($frist <= 10) && ($end <= 10)){
 		        $method = '*';
+		        $method_txt = "×";
 		    }
 		}else{
 		    $method = '-';
+		    $method_txt = "－";
 		    if(($frist % $end) == 0){
 		        $method = '/';
+		        $method_txt = "÷";
 		    }
 		}
-		$fonttext = $frist. " $method " .$end. ' = ?';
+		$fonttext = $frist. " $method_txt " .$end. ' = ?';
 		eval('$res = '. $frist . $method . $end.';');
-	    imagestring($this->image, $fontsize, $x, $y, $fonttext, $fontcolor);
+		imagefttext($this->image, $fontsize, 0, $x, $y, $fontcolor, $this->font, $fonttext);
 		$_SESSION[$this->session_name] = $res;
 	}
 	
